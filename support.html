@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – Intent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo"><em>Intent</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </nav>
+
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Help &nbsp;/&nbsp; Support</p>
+      <h1>Support<br><em>Intent</em></h1>
+    </header>
+
+    <hr class="rule" />
+
+    <div class="faq-section">
+      <p class="faq-label">Getting started</p>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          How do I create a new entry?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>Tap the camera icon at the top of most screens to start a new entry. Intent will prompt you to take or attach a photo. Add notes and set a location.  When you save coordinates and weather are saved automatically </p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Does Intent require an internet connection?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>Only for getting the weather. Otherwise Intent works entirely offline. All data is stored locally on your device.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Can I use Intent without allowing location access?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>Yes. Location is optional. You can create entries without it, though location data is one of the core features of the field archive. You can adjust permissions at any time in iOS Settings.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <p class="faq-label">Data & backups</p>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Is my data backed up?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>If you have iCloud Backup enabled on your device, your Intent data is included in your standard iOS device backup automatically. We recommend keeping iCloud Backup enabled to protect your field archive.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          What happens if I delete the app?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>Deleting the app removes all locally stored data. If you have iCloud Backup enabled, your data will be restored when you reinstall and restore from backup. Always ensure backups are current before removing the app.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Does Intent collect any personal data?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>No. Intent collects nothing. All data stays on your device. See our Privacy Policy for full details.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <p class="faq-label">Audio & photos</p>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Where are my audio notes stored?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>Audio files are stored in your app's Documents directory on-device. They're included in iCloud Backup automatically if you have that enabled.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Are reference photos full resolution?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a"><p>Reference photos are saved as optimized JPEGs (max 2000px, 75% quality) to keep your archive manageable. They're intended as context anchors, not finished images.</p></div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h2>Still have a question?</h2>
+      <p>Intent is a solo-developed app. If something isn't working or you have a suggestion, reach out directly — I read every message.</p>
+      <a href="mailto:support@intent-photo.com" class="btn-contact">Email Support</a>
+    </div>
+
+    <hr class="rule" />
+
+    <footer>
+      <span>© 2026 Brian Bochicchio</span>
+      <a href="https://brianbochicchio.com">brianbochicchio.com</a>
+    </footer>
+  </div>
+
+  <script>
+    function toggle(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
