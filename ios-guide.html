@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guides – Intent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .guide-section { margin-bottom: 48px; animation: fadeUp 0.5s ease both; }
+    .guide-section:nth-child(2) { animation-delay: 0.08s; }
+    .guide-section:nth-child(3) { animation-delay: 0.14s; }
+    .guide-section:nth-child(4) { animation-delay: 0.20s; }
+    .guide-section:nth-child(5) { animation-delay: 0.26s; }
+
+    .guide-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-dim);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .guide-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .guide-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 2px;
+      overflow: hidden;
+    }
+
+    .guide-card-header {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      text-align: left;
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+
+    .guide-card-header:hover { color: var(--accent); }
+
+    .guide-card-header .chevron {
+      font-size: 10px;
+      color: var(--accent-dim);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+
+    .guide-card.open .chevron { transform: rotate(180deg); }
+
+    .guide-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .guide-card.open .guide-body {
+      max-height: 800px;
+      padding: 0 24px 28px;
+    }
+
+    .steps { display: flex; flex-direction: column; gap: 0; }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .step-content {
+      font-size: 13px;
+      line-height: 1.75;
+      color: #c4bfb7;
+      padding-top: 1px;
+    }
+
+    .step-content strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .guide-tip {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-left: 2px solid var(--accent-dim);
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .guide-tip strong {
+      color: var(--accent);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+
+    .guide-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo"><em>Intent</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </nav>
+
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Help &nbsp;/&nbsp; Guides ~ iOS</p>
+      <h1>How to use<br><em>Intent</em></h1>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- Section: Shoots -->
+    <div class="guide-section">
+      <p class="guide-label">Photo shoots</p>
+
+      <div class="guide-card">
+        <button class="guide-card-header" onclick="toggle(this)">
+          How do I add a shoot?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="guide-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">Tap the <strong>+ button</strong> on the home screen to start a new shoot.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">Take or add a reference photo. Intent automatically records the <strong>date, time, location, and weather conditions</strong> for that moment.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">Add a written note, or tap the <strong>microphone</strong> to transcribe your voice directly into the notes field.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">Choose an existing location. Or create a new one to file the shoot under.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-content">Tap <strong>Save</strong>. Your shoot is stored locally on your device.</div>
+            </div>
+          </div>
+          <div class="guide-tip"><strong>Note —</strong> Voice transcription runs on-device and feeds directly into the notes field, so you can talk through what you're seeing without typing.</div>
+        </div>
+      </div>
+
+      <div class="guide-card">
+        <button class="guide-card-header" onclick="toggle(this)">
+          How do I edit a shoot?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="guide-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">Tap a shoot from the home screen to open it.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">Tap to edit — your notes, tags, or voice transcription.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">Changes <strong>save automatically</strong> as you make them.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Tags -->
+    <div class="guide-section">
+      <p class="guide-label">Tags</p>
+
+      <div class="guide-card">
+        <button class="guide-card-header" onclick="toggle(this)">
+          How do I add tags to a note?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="guide-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">Open a note by tapping it from the home screen.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">Tap the <strong>tags field</strong> and start typing. Intent suggests matches from your existing tags and a built-in list of photography terms.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">Tap a suggestion to add it, or finish typing and confirm to <strong>create a new tag</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">To remove a tag, tap the <strong>× on the tag</strong> inside the note.</div>
+            </div>
+          </div>
+          <div class="guide-tip"><strong>Note —</strong> Tags are fully searchable. Once you tag a shoot "golden hour" or "long exposure," you can find every shoot with that tag from the search screen.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Search -->
+    <div class="guide-section">
+      <p class="guide-label">Search</p>
+
+      <div class="guide-card">
+        <button class="guide-card-header" onclick="toggle(this)">
+          How do I search my shoots?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="guide-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">Tap the <strong>magnifying glass</strong> in the toolbar on the home screen.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">Type any word or phrase. Intent searches across your <strong>notes, tags, location names, and weather summaries</strong> simultaneously.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">Results appear as you type. Each result shows a <strong>match hint</strong> so you can see at a glance why it came up.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">Tap any result to open the full shoot.</div>
+            </div>
+          </div>
+          <div class="guide-tip"><strong>Note —</strong> Try searching for weather conditions like "overcast" or "wind" — Intent captures those automatically, so your field conditions become searchable without any extra effort.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Recycle bin -->
+    <div class="guide-section">
+      <p class="guide-label">Recycle bin</p>
+
+      <div class="guide-card">
+        <button class="guide-card-header" onclick="toggle(this)">
+          How do I delete a shoot — and can I get it back?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="guide-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">Swipe left on a shoot from the home screen and tap <strong>Recycle</strong>. The shoot moves to the recycle bin — it isn't permanently removed yet.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">To access the recycle bin, tap <strong>Recycle Bin</strong> on the main navigation.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">To restore am individual shoot, swipe left on it and chose <strong>Undelete</strong>. It returns to the home screen exactly where it was. If you swipe far enough you will also see <strong>Delete</strong>. Tap that to permanently delete only that shoot.</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">To empty Recycle Bin, tap the <strong>Trash Can</strong> in the top toolbar.  All shoots in the bin will be permanently deleted.</div>
+            </div>
+          </div>
+          <div class="guide-tip"><strong>Note —</strong> Deleted shoots don't appear in search results — only active shoots are searched.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Views -->
+    <div class="guide-section">
+      <p class="guide-label">Browsing your notes</p>
+
+      <div class="guide-card">
+        <button class="guide-card-header" onclick="toggle(this)">
+          How do I switch between location view and list view?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="guide-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">Tap the <strong>list icon in the toolbar</strong> on the home screen to toggle between the two views.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content"><strong>Location view</strong> (default) groups your notes by where you shot them. Swipe horizontally to move between locations.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content"><strong>Flat list view</strong> shows all notes in a single chronological list, newest first, across all locations.</div>
+            </div>
+          </div>
+          <div class="guide-tip"><strong>Note —</strong> The toggle works in both All Notes and Recent modes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h2>Still have a question?</h2>
+      <p>Intent is a solo‑developed app. If something isn't working or you have a suggestion, feel free to reach out — every message is read.</p>
+      <a href="mailto:support@intent-photo.com" class="btn-contact">Email Support</a>
+    </div>
+
+    <hr class="rule" />
+
+    <footer>
+      <span>© 2026 Blackdaw Media LLC</span>
+      <ul class="footer-links">
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="https://blackdawmedia.com">blackdawmedia.com</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script>
+    function toggle(btn) {
+      const item = btn.closest('.guide-card');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.guide-card.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
